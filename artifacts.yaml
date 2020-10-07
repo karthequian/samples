@@ -220,3 +220,16 @@ spec:
         ports:
         - containerPort: 80 #Endpoint is at port 80 in the container
 ### K8s error app end
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-pod
+  labels:
+    role: simple-pod
+spec:
+  containers:
+    - name: web
+      image: karthequian/helloworld:latest
+      ports:
+        - containerPort: 80

@@ -251,8 +251,8 @@ spec:
     spec:
       containers:
       - name: sleepy-app
-      image: busybox
-      args:
-      - sleep
-      - "100"
+        image: busybox
+        args:
+        - sleep
+        - "100"
 ### K8s sleepy app end

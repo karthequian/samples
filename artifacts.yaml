@@ -233,3 +233,26 @@ spec:
       image: karthequian/helloworld:latest
       ports:
         - containerPort: 80
+---
+### K8s sleepy app start
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sleepy-app
+spec:
+  selector:
+    matchLabels:
+      app: sleepy-app
+  replicas: 1 
+  template: 
+    metadata:
+      labels:
+        app: sleepy-app
+    spec:
+      containers:
+      - name: sleepy-app
+      image: busybox
+      args:
+      - sleep
+      - "100"
+### K8s sleepy app end

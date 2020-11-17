@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: siege
+spec:
+  template:
+    spec:
+      containers:
+        - name: siege
+          image: mikezhou/siege
+          env:
+            - name: URL
+              value: "http://<ENTER URL>"
+            - name: TIMEOUT
+              value: "60"
+            - name: PARSER
+              value: "false"
+            - name: CONCURRENT
+              value: "100"
+            - name: LIMIT
+              value: "100"
+            - name: TIME
+              value: "30s"
+      restartPolicy: Never
+  backoffLimit: 1
+  parallelism: 5
+  completions: 5

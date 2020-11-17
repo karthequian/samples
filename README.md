@@ -1,2 +1,2 @@
 # samples
-Random Samples
+Kubernetes related samples
